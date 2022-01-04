@@ -5,6 +5,7 @@ import 'package:potrtfolio/Model/Method.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
 import 'package:potrtfolio/Widget/MobileProject.dart';
 import 'package:potrtfolio/Widget/MobileWork.dart';
+import 'package:potrtfolio/Data/Contents.dart';
 
 class MobileHome extends StatefulWidget {
   @override
@@ -48,8 +49,8 @@ class _MobileHomeState extends State<MobileHome> {
                   currentAccountPicture: CircleAvatar(
                     child: Icon(Icons.person),
                   ),
-                  accountName: Text("Tushar Nikam"),
-                  accountEmail: Text("champ96k@gmail.com")),
+                  accountName: Text(kName),
+                  accountEmail: Text(kMailAddress)),
               ListTile(
                 title: Text("Share"),
                 leading: Icon(Icons.share),
@@ -95,7 +96,7 @@ class _MobileHomeState extends State<MobileHome> {
                 height: size.height * 0.02,
               ),
               CustomText(
-                text: "Tushar Nikam.",
+                text: kName + ".",
                 textsize: 52.0,
                 color: Color(0xffCCD6F6),
                 fontWeight: FontWeight.w900,
@@ -104,7 +105,7 @@ class _MobileHomeState extends State<MobileHome> {
                 height: size.height * 0.04,
               ),
               CustomText(
-                text: "I build things for the Android and web.",
+                text: kHeadlineText,
                 textsize: 42.0,
                 color: Color(0xffCCD6F6).withOpacity(0.6),
                 fontWeight: FontWeight.w700,
@@ -117,7 +118,7 @@ class _MobileHomeState extends State<MobileHome> {
                 child: Wrap(
                   children: [
                     Text(
-                      "I'm a freelancer based in Nashik, IN specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.",
+                      kSubHeadlineText,
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 15.0,
@@ -727,7 +728,7 @@ class _MobileHomeState extends State<MobileHome> {
                         alignment: WrapAlignment.center,
                         children: [
                           Text(
-                            "Although I'm currently looking for SDE-1 opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+                            kFinalText,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white.withOpacity(0.4),
@@ -787,7 +788,7 @@ class _MobileHomeState extends State<MobileHome> {
                       size: 15.0,
                     ),
                     onPressed: () {
-                      method.launchURL("https://github.com/champ96k");
+                      method.launchURL(kGithubURL);
                     },
                   ),
                   IconButton(
@@ -797,8 +798,7 @@ class _MobileHomeState extends State<MobileHome> {
                       size: 15.0,
                     ),
                     onPressed: () {
-                      method.launchURL(
-                          "https://www.linkedin.com/in/tushar-nikam-a29a97131/");
+                      method.launchURL(kLinkedInURL);
                     },
                   ),
                   IconButton(
@@ -808,7 +808,7 @@ class _MobileHomeState extends State<MobileHome> {
                       size: 15.0,
                     ),
                     onPressed: () {
-                      method.launchURL("https://twitter.com/champ_96k");
+                      method.launchURL(kTwitterURL);
                     },
                   ),
                   IconButton(
