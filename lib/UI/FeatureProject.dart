@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:potrtfolio/Widget/CustomText.dart';
+import 'package:potrtfolio/Model/Method.dart';
 
 class FeatureProject extends StatelessWidget {
   final String imagePath;
@@ -9,16 +10,17 @@ class FeatureProject extends StatelessWidget {
   final String tech1;
   final String tech2;
   final String tech3;
-  final Function ontab;
+  final String linkURL;
 
   FeatureProject(
       {this.imagePath,
-      this.ontab,
+      this.linkURL,
       this.projectDesc,
       this.projectTitle,
       this.tech1,
       this.tech2,
       this.tech3});
+  Method method = Method();
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +155,9 @@ class FeatureProject extends StatelessWidget {
                         IconButton(
                           icon: FaIcon(FontAwesomeIcons.github),
                           color: Colors.white.withOpacity(0.3),
-                          onPressed: ontab,
+                          onPressed: () {
+                            method.launchURL(linkURL);
+                          },
                         ),
                       ],
                     ),
